@@ -1,0 +1,25 @@
+<!-- Blog entries-->
+<div class="col-lg-8">
+  <!-- Featured blog post-->
+  <h1 class="my-4">
+    <% if @topic == nil %>
+      Все посты
+    <% else %>
+      <%= @topic.title %>
+    <% end %>
+  </h1>
+  <% @posts.each do |post| %>
+    <div class="card mb-4">
+        <div class="card-body">
+          <h2 class="card-title"><%= post.title %></h2>
+          <p class="card-text"><%= post.body.length <= 1000 ? post.body: post.body(0..1000) %></p>
+          <a class="btn btn-primary" href="/posts/<%= post.id %>">Читать далее &rarr;</a>
+        </div>
+        <div class="card-footer text-muted">
+          <%= post.created_at %>
+        </div>
+    </div>
+  <% end %>
+</div>
+
+

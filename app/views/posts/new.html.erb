@@ -1,0 +1,21 @@
+<div class="col-md-8">
+  <form action="/posts/create" method="POST">
+    <div class="form-group">
+      <label for="title">Заголовок</label>
+      <input type="text" class="form-control" name="post[title]" >
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlSelect1">Выпадающий список</label>
+      <select class="form-control" name="post[topic_id]" >
+        <% @topics.each do |topic| %>
+          <option value="<%= topic.id %>"><%= topic.title %></option>
+        <% end %>
+    </div>
+   <div class="form-group">
+      <label>Текст:</label>
+      <textarea class="form-control" name="post[body]" rows="10"></textarea>
+    </div>
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %> 
+    <button type="submit" class="btn btn-primary">Создать</button>
+  </form>
+</div>

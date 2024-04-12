@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "bootstrap": "4.6.2",
+    "jquery": "^3.7.1",
+    "popper.js": "^1.16.1"
+  },
+  "name": "purpurr",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Nozim Yusupov <nozimy@yandex.ru>",
+  "license": "MIT"
+}
